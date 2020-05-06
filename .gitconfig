@@ -1,0 +1,10 @@
+[user]
+	name = Jackson Hoffart
+	email = jackson.hoffart@gmail.com
+[jackson]
+[push]
+	default = current
+[core]
+	editor = vim
+	excludesfile = /Users/jhoffart/.gitignore_global
+[credential]
