@@ -9,7 +9,7 @@ export ZSH="/Users/jhoffart/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-# DEFAULT_USER=`whoami`
+DEFAULT_USER=`whoami`
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
