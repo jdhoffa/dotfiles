@@ -73,7 +73,7 @@ return require('packer').startup({ function(use)
     config = function() require 'octo'.setup {} end
   }
   -- slime
-  use 'jpalardy/vim-slime'
+  use { 'jpalardy/vim-slime', as = 'slime' }
 
   -- tmux
   use 'christoomey/vim-tmux-navigator'
