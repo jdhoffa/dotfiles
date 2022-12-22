@@ -1,5 +1,3 @@
-local vs = require("vim-slime")
-
-vs.setup({
+require("vim-slime").setup({
   slime_target = "tmux"
 })
