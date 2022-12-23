@@ -39,7 +39,7 @@ gui:
   showBottomLine: false
   commandLogSize: 8
   authorColors: # in case you're not happy with the randomly assigned colour
-    'joshmedeski': '#ff0000'
+    'jdhoffa': '#ff0000'
 git:
   paging:
     colorArg: always
