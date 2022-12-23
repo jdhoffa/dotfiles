@@ -81,5 +81,8 @@ return require('packer').startup({ function(use)
   -- tracking
   use 'wakatime/vim-wakatime'
 
+  -- zen
+  use 'folke/zen-mode.nvim'
+
 end, config = { display = { open_fn = require('packer.util').float } }
 })
