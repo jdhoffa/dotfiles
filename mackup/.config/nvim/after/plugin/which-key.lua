@@ -73,6 +73,7 @@ wk.setup {
 }
 
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank to clipboard' })
+vim.keymap.set('n', '<c-c><cr>', '<c-c><c-c>}j', { remap = true, desc = 'Slime and jump chunk' })
 
 wk.register({
   -- Harpoon
