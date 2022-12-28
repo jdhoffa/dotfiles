@@ -1,6 +1,6 @@
 local wk = require("which-key")
 
-wk.setup {
+wk.setup({
   plugins = {
     marks = true, -- shows a list of your marks on ' and `
     registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
@@ -11,9 +11,9 @@ wk.setup {
     -- the presets plugin, adds help for a bunch of default keybindings in Neovim
     -- No actual key bindings are created
     presets = {
-      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
-      motions = true, -- adds help for motions
-      text_objects = true, -- help for text objects triggered after entering an operator
+      operators = false, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      motions = false, -- adds help for motions
+      text_objects = false, -- help for text objects triggered after entering an operator
       windows = true, -- default bindings on <c-w>
       nav = true, -- misc bindings to work with windows
       z = true, -- bindings for folds, spelling and others prefixed with z
@@ -36,15 +36,15 @@ wk.setup {
     group = "+", -- symbol prepended to a group
   },
   popup_mappings = {
-    scroll_down = '<c-d>', -- binding to scroll down inside the popup
-    scroll_up = '<c-u>', -- binding to scroll up inside the popup
+    scroll_down = "<c-d>", -- binding to scroll down inside the popup
+    scroll_up = "<c-u>", -- binding to scroll up inside the popup
   },
   window = {
     border = "single", -- none, single, double, shadow
     position = "bottom", -- bottom, top
     margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
     padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
-    winblend = 0
+    winblend = 0,
   },
   layout = {
     height = { min = 4, max = 25 }, -- min and max height of the columns
@@ -70,12 +70,18 @@ wk.setup {
     buftypes = {},
     filetypes = { "TelescopePrompt" },
   },
-}
+})
 
 vim.keymap.set('v', '<leader>y', '"+y', { desc = 'Yank to clipboard' })
 vim.keymap.set('n', '<c-c><cr>', '<c-c><c-c>}j', { remap = true, desc = 'Slime and jump chunk' })
 
 wk.register({
+  -- format
+  ["="] = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format file" },
+
+  -- lsp
+  ["."] = { "<cmd>CodeActionMenu<cr>", "CodeActionMenu" },
+
   -- Harpoon
   ["'"] = { "<cmd>lua require('harpoon.mark').add_file()<cr>", "Add to Harpoon" },
   ["0"] = { "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Harpoon" },
@@ -101,11 +107,11 @@ wk.register({
     p = { "<cmd>bp<cr>", "Previous" },
     s = {
       name = "Surroding",
-      d = { "<cmd>%bd|e#|bd#<cr>|'<cr>", "Delete surrounding" }
-    }
+      d = { "<cmd>%bd|e#|bd#<cr>|'<cr>", "Delete surrounding" },
+    },
   },
 
-  f = { "<cmd>Lf<cr>", "Lf" }, -- create a binding with label
+  f = { "<cmd>Lf<cr>", "Lf" },
 
   g = {
     name = "Git",
@@ -115,7 +121,7 @@ wk.register({
     g = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>zt", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>zt", "Prev Hunk" },
-    l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
+    l = { "<cmd>Gitsigns toggle_signs<cr>", "Blame" },
     n = { "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>zt", "Next Hunk" },
     o = { "<cmd>Telescope git_status<cr>", "Open changed file" },
     p = { "<cmd>lua require 'gitsigns'.prev_hunk({navigation_message = false})<cr>zt", "Prev Hunk" },
@@ -125,6 +131,13 @@ wk.register({
       "Undo Stage Hunk",
     },
     x = { "<cmd>lua require 'gitsigns'.reset_hunk()<cr>", "Reset Hunk" },
+  },
+
+  l = {
+    name = "Lines",
+    e = { "<cmd>set number norelativenumber<cr>", "Absolute line numbers" },
+    r = { "<cmd>set number relativenumber<cr>", "Relative line numbers" },
+    x = { "<cmd>set nonumber norelativenumber<cr>", "Hide line number" },
   },
 
   t = {
@@ -150,14 +163,16 @@ wk.register({
     g = {
       g = {
         "<cmd>lua require('trouble').first({skip_groups = true, jump = true})<cr>",
-        "Jump to the first item, skipping the groups"
+        "Jump to the first item, skipping the groups",
       },
     },
     G = {
       "<cmd>lua require('trouble').last({skip_groups = true, jump = true})<cr>",
-      "Jump to the last item, skipping the groups"
-    }
+      "Jump to the last item, skipping the groups",
+    },
   },
+
+  u = { "<cmd>UndotreeToggle<cr>", "UndoTree" },
 
   -- nmap <leader>% :source %<cr>
   -- nmap <leader><leader> <Plug>(coc-fix-current)
