@@ -28,7 +28,7 @@ lsp.on_attach(function(_, bufnr)
     desc = "Telescope lsp definitions",
   })
 
-  vim.keymap.set("n", "gd", require("joshmedeski/go_to_def").go_to_def, {
+  vim.keymap.set("n", "gd", require("jdhoffa/go_to_def").go_to_def, {
     buffer = bufnr,
     remap = false,
     desc = "Go to definition",
