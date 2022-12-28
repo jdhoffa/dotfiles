@@ -6,6 +6,7 @@ set fish_greeting # disable fish greeting
 
 starship init fish | source # 
 zoxide init fish | source
+pyenv init - | source
 
 set -U LANG en_US.UTF-8 # language
 set -U LC_ALL en_US.UTF-8
