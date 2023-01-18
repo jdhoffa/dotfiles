@@ -42,20 +42,10 @@ return require("packer").startup({
     })
 
     -- manipulation
-    use({
-      "windwp/nvim-autopairs",
-      config = function()
-        require("nvim-autopairs").setup({})
-      end,
-    })
-    use("folke/which-key.nvim")
-    use("tpope/vim-surround")
-    use({
-      "numToStr/Comment.nvim",
-      config = function()
-        require("Comment").setup()
-      end,
-    })
+    use('folke/which-key.nvim')
+    use('tpope/vim-surround')
+    use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
+    use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end }
 
     -- undo
     use("mbbill/undotree")
@@ -77,7 +67,7 @@ return require("packer").startup({
     use({ "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" })
     use({ "folke/trouble.nvim", requires = "nvim-tree/nvim-web-devicons" })
 
-    -- window
+   -- window
     use({
       "beauwilliams/focus.nvim",
       cmd = { "FocusSplitNicely", "FocusSplitCycle" },
@@ -128,33 +118,33 @@ return require("packer").startup({
     })
 
     -- git
-    use("lewis6991/gitsigns.nvim")
-    use("rhysd/committia.vim")
-    use({
-      "sindrets/diffview.nvim",
-      requires = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-web-devicons" },
-    })
-    use({
-      "pwntester/octo.nvim",
+    use 'lewis6991/gitsigns.nvim'
+    use 'rhysd/committia.vim'
+    use {
+      'sindrets/diffview.nvim',
+      requires = { 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons' }
+    }
+    use {
+      'pwntester/octo.nvim',
       requires = {
-        "nvim-lua/plenary.nvim",
-        "nvim-telescope/telescope.nvim",
-        "nvim-tree/nvim-web-devicons",
+        'nvim-lua/plenary.nvim',
+        'nvim-telescope/telescope.nvim',
+        'kyazdani42/nvim-web-devicons',
       },
-      config = function()
-        require("octo").setup({})
-      end,
-    })
+      config = function() require 'octo'.setup {} end
+    }
+
+    -- slime
+    use("jpalardy/vim-slime")
 
     -- tmux
     use("christoomey/vim-tmux-navigator")
 
-    -- AI
-    use("github/copilot.vim")
-
     -- tracking
-    use("wakatime/vim-wakatime")
-    -- use("ActivityWatch/aw-watcher-vim")
-  end,
-  config = { display = { open_fn = require("packer.util").float } },
+    use 'wakatime/vim-wakatime'
+
+    -- zen
+    use 'folke/zen-mode.nvim'
+
+  end, config = { display = { open_fn = require('packer.util').float } }
 })

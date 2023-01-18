@@ -3,6 +3,10 @@ set fish_greeting # disable fish greeting
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
+pyenv init - | source
+
+set -U LANG en_US.UTF-8 # language
+set -U LC_ALL en_US.UTF-8
 
 set -gx CPPFLAGS -I/opt/homebrew/opt/sqlite/include
 set -gx LDFLAGS -L/opt/homebrew/opt/sqlite/lib
