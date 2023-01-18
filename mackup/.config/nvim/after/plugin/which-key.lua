@@ -65,7 +65,7 @@ wk.setup({
     v = { "j", "k" },
   },
   -- disable the WhichKey popup for certain buf types and file types.
-  -- Disabled by deafult for Telescope
+  -- Disabled by default for Telescope
   disable = {
     buftypes = {},
     filetypes = { "TelescopePrompt" },
@@ -80,7 +80,7 @@ wk.register({
   ["="] = { "<cmd>lua vim.lsp.buf.format()<cr>", "Format file" },
 
   -- lsp
-  ["."] = { "<cmd>CodeActionMenu<cr>", "CodeActionMenu" },
+  ["<leader>"] = { "<cmd>CodeActionMenu<cr>", "CodeActionMenu" },
 
   -- Harpoon
   ["'"] = {
@@ -154,6 +154,8 @@ wk.register({
     a = { "<cmd>silent !git add %<cr>", "Commit" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     -- c = { "<cmd>silent !git commit -v<cr>", "Commit" },
+    d = { "<cmd>:DiffviewOpen<cr>", "DiffViewOpen" },
+    D = { "<cmd>:DiffviewClose<cr>", "DiffViewOpen" },
     g = { "<cmd>lua require 'gitsigns'.stage_hunk()<cr>", "Stage Hunk" },
     j = {
       "<cmd>lua require 'gitsigns'.next_hunk({navigation_message = false})<cr>zt",
@@ -193,6 +195,20 @@ wk.register({
     e = { "<cmd>set number norelativenumber<cr>", "Absolute line numbers" },
     r = { "<cmd>set number relativenumber<cr>", "Relative line numbers" },
     x = { "<cmd>set nonumber norelativenumber<cr>", "Hide line number" },
+  },
+
+  r = {
+    name = "Replace",
+    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+  },
+
+  s = {
+    name = "Spelling & Grammar",
+    c = { "<cmd>setlocal spell!<cr>", "Toggle spell check" },
+    x = {
+      "<cmd>lua require('null_ls').disable({ name = 'cpell' })<cr>",
+      "Toggle spell check",
+    },
   },
 
   t = {

@@ -1,13 +1,8 @@
 -- cSpell:words autocmd linebreak nolist afile yabairc skhdrc
 
--- vim.api.nvim_create_autocmd("BufWritePost", {
---   pattern = { "packer.lua" },
---   command = "PackerSync"
--- })
-
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { "*tmux.conf" },
-  command = "!tmux source <afile>",
+  command = "execute 'silent !tmux source <afile> --silent'",
 })
 
 vim.api.nvim_create_autocmd("BufWritePost", {

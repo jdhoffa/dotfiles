@@ -4,7 +4,7 @@ Forked from https://github.com/joshmedeski/dotfiles
 
 ![screenshot](./screenshot.png)
 
-This is the home of all my dotfiles. These are special files that add custom configurations to my computer and applications, primarily the terminnal.
+This is the home of all my dotfiles. These are files that add custom configurations to my computer and applications, primarily the terminal.
 
 # Software
 
@@ -17,6 +17,7 @@ This is the home of all my dotfiles. These are special files that add custom con
 - Git: [lazygit](https://github.com/jesseduffield/lazygit)
 - macOS package manager: [Homebrew](https://brew.sh)
 - npm package manager: [pnpm](https://pnpm.io/)
+- music accessory: [Sleeve](https://replay.software/sleeve)
 
 # Hardware
 

@@ -133,6 +133,15 @@ _G.packer_plugins = {
     path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "https://github.com/sindrets/diffview.nvim"
   },
+  ["focus.nvim"] = {
+    commands = { "FocusSplitNicely", "FocusSplitCycle" },
+    config = { "\27LJ\2\nH\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\1\17hybridnumber\2\nsetup\nfocus\frequire\0" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/opt/focus.nvim",
+    url = "https://github.com/beauwilliams/focus.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -301,15 +310,15 @@ _G.packer_plugins = {
     path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/undotree",
     url = "https://github.com/mbbill/undotree"
   },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/vim-rooter",
-    url = "https://github.com/airblade/vim-rooter"
-  },
   ["vim-slime"] = {
     loaded = true,
     path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/vim-slime",
     url = "https://github.com/jpalardy/vim-slime"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -339,6 +348,34 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+local module_lazy_loads = {
+  ["^focus"] = "focus.nvim"
+}
+local lazy_load_called = {['packer.load'] = true}
+local function lazy_load_module(module_name)
+  local to_load = {}
+  if lazy_load_called[module_name] then return nil end
+  lazy_load_called[module_name] = true
+  for module_pat, plugin_name in pairs(module_lazy_loads) do
+    if not _G.packer_plugins[plugin_name].loaded and string.match(module_name, module_pat) then
+      to_load[#to_load + 1] = plugin_name
+    end
+  end
+
+  if #to_load > 0 then
+    require('packer.load')(to_load, {module = module_name}, _G.packer_plugins)
+    local loaded_mod = package.loaded[module_name]
+    if loaded_mod then
+      return function(modname) return loaded_mod end
+    end
+  end
+end
+
+if not vim.g.packer_custom_loader_enabled then
+  table.insert(package.loaders, 1, lazy_load_module)
+  vim.g.packer_custom_loader_enabled = true
+end
+
 -- Config for: Comment.nvim
 time([[Config for Comment.nvim]], true)
 try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
@@ -360,6 +397,25 @@ time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
+
+-- Command lazy-loads
+time([[Defining lazy-load commands]], true)
+pcall(vim.api.nvim_create_user_command, 'FocusSplitNicely', function(cmdargs)
+          require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitNicely', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitNicely' }, _G.packer_plugins)
+          return vim.fn.getcompletion('FocusSplitNicely ', 'cmdline')
+      end})
+pcall(vim.api.nvim_create_user_command, 'FocusSplitCycle', function(cmdargs)
+          require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitCycle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
+        end,
+        {nargs = '*', range = true, bang = true, complete = function()
+          require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitCycle' }, _G.packer_plugins)
+          return vim.fn.getcompletion('FocusSplitCycle ', 'cmdline')
+      end})
+time([[Defining lazy-load commands]], false)
+
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
