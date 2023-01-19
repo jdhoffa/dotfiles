@@ -259,6 +259,13 @@ _G.packer_plugins = {
     path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
   },
+  ["nvim-ts-context-commentstring"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/opt/nvim-ts-context-commentstring",
+    url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/Users/jdhoffa/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -376,25 +383,26 @@ if not vim.g.packer_custom_loader_enabled then
   vim.g.packer_custom_loader_enabled = true
 end
 
--- Config for: Comment.nvim
-time([[Config for Comment.nvim]], true)
-try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
-time([[Config for Comment.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
--- Config for: octo.nvim
-time([[Config for octo.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
-time([[Config for octo.nvim]], false)
 -- Config for: impatient.nvim
 time([[Config for impatient.nvim]], true)
 try_loadstring("\27LJ\2\n)\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0\14impatient\frequire\0", "config", "impatient.nvim")
 time([[Config for impatient.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\2\n5\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: octo.nvim
+time([[Config for octo.nvim]], true)
+try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\tocto\frequire\0", "config", "octo.nvim")
+time([[Config for octo.nvim]], false)
+-- Config for: nvim-autopairs
+time([[Config for nvim-autopairs]], true)
+try_loadstring("\27LJ\2\n@\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
+time([[Config for nvim-autopairs]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-ts-context-commentstring ]]
 vim.cmd [[ packadd nvim-treesitter-textobjects ]]
 time([[Sequenced loading]], false)
 
@@ -404,14 +412,14 @@ pcall(vim.api.nvim_create_user_command, 'FocusSplitNicely', function(cmdargs)
           require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitNicely', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitNicely' }, _G.packer_plugins)
+          require('packer.load')({'focus.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('FocusSplitNicely ', 'cmdline')
       end})
 pcall(vim.api.nvim_create_user_command, 'FocusSplitCycle', function(cmdargs)
           require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitCycle', l1 = cmdargs.line1, l2 = cmdargs.line2, bang = cmdargs.bang, args = cmdargs.args, mods = cmdargs.mods }, _G.packer_plugins)
         end,
         {nargs = '*', range = true, bang = true, complete = function()
-          require('packer.load')({'focus.nvim'}, { cmd = 'FocusSplitCycle' }, _G.packer_plugins)
+          require('packer.load')({'focus.nvim'}, {}, _G.packer_plugins)
           return vim.fn.getcompletion('FocusSplitCycle ', 'cmdline')
       end})
 time([[Defining lazy-load commands]], false)
