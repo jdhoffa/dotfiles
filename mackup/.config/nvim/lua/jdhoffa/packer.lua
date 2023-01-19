@@ -144,6 +144,9 @@ return require("packer").startup({
     -- tmux
     use("christoomey/vim-tmux-navigator")
 
+    -- AI
+    use("github/copilot.vim")
+
     -- tracking
     use 'wakatime/vim-wakatime'
 
