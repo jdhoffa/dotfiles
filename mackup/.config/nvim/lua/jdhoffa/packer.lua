@@ -51,6 +51,9 @@ return require("packer").startup({
     use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
     use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end }
 
+    -- markdown
+    use("iamcco/markdown-preview.nvim")
+
     -- undo
     use("mbbill/undotree")
 
