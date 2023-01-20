@@ -13,6 +13,7 @@ abbr bs "brew services"
 abbr bsr "brew services restart"
 abbr bu "brew update"
 abbr bug "brew upgrade"
+abbr brave "open -a Brave\ Browser"
 abbr c clear
 abbr cl clear
 abbr claer clear
