@@ -58,6 +58,7 @@ abbr l "lsd  --group-dirs first -A"
 abbr ld lazydocker
 abbr lg lazygit
 abbr ll "lsd  --group-dirs first -Al"
+abbr ls "lsd  --group-dirs first -A"
 abbr lt "lsd  --group-dirs last -A --tree"
 abbr nb "npm run build"
 abbr nd "npm run dev"
