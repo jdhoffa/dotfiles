@@ -11,7 +11,7 @@ set -U LC_ALL en_US.UTF-8
 set -gx CPPFLAGS -I/opt/homebrew/opt/sqlite/include
 set -gx LDFLAGS -L/opt/homebrew/opt/sqlite/lib
 set -gx PKG_CONFIG_PATH /opt/homebrew/opt/sqlite/lib/pkgconfig
-set -gx PNPM_HOME /Users/joshmedeski/Library/pnpm # https://pnpm.io/
+set -gx PNPM_HOME /Users/jdhoffa/Library/pnpm # https://pnpm.io/
 set -U BAT_THEME Nord # 'sharkdp/bat' cat clone 
 set -U EDITOR nvim # 'neovim/neovim' text editor 
 set -U FZF_CTRL_R_OPTS "--border-label=' History ' --prompt=' '"
