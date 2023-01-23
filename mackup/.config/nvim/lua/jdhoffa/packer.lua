@@ -52,7 +52,12 @@ return require("packer").startup({
     use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end }
 
     -- markdown
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = {'markdown'}
+    })
     -- undo
     use("mbbill/undotree")
 
