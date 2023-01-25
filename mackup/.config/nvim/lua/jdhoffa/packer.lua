@@ -18,7 +18,6 @@ return require("packer").startup({
     })
 
     -- tabs
-    use("nvim-lua/nvim-web-devicons.nvim")
     use({
       "romgrk/barbar.nvim",
       wants = { "nvim-tree/nvim-web-devicons" },
@@ -174,7 +173,6 @@ return require("packer").startup({
       }
     end
   }
-
     -- slime
     use("jpalardy/vim-slime")
 
