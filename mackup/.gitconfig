@@ -4,7 +4,7 @@
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [core]
- 	editor = nvim
+ 	editor = vim
  	excludesfile = /Users/jdhoffa/.gitignore
 	pager = delta
 [interactive]
