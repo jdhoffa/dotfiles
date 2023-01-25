@@ -12,6 +12,8 @@ set -gx CPPFLAGS -I/opt/homebrew/opt/sqlite/include
 set -gx LDFLAGS -L/opt/homebrew/opt/sqlite/lib
 set -gx PKG_CONFIG_PATH /opt/homebrew/opt/sqlite/lib/pkgconfig
 set -gx PNPM_HOME /Users/jdhoffa/Library/pnpm # https://pnpm.io/
+set -gx R_ENVIRON_USER ~/.Renviron # https://www.r-project.org/
+set -gx R_PROFILE_USER ~/.Rprofile # https://www.r-project.org/
 set -U BAT_THEME Nord # 'sharkdp/bat' cat clone 
 set -U EDITOR nvim # 'neovim/neovim' text editor 
 set -U FZF_CTRL_R_OPTS "--border-label=' History ' --prompt=' '"
