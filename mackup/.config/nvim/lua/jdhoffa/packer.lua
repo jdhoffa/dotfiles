@@ -17,6 +17,13 @@ return require("packer").startup({
       end,
     })
 
+    -- tabs
+    use("nvim-lua/nvim-web-devicons.nvim")
+    use({
+      "romgrk/barbar.nvim",
+      wants = { "nvim-tree/nvim-web-devicons" },
+    })
+
     -- theme
     use("catppuccin/nvim")
 
