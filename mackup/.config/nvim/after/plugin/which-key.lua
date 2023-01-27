@@ -198,8 +198,13 @@ wk.register({
   },
 
   r = {
-    name = "Replace",
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+    name = "R-language",
+    t = { '<cmd>SlimeSend0 "devtools::test()\\n"<cr>', "Test" },
+    c = { '<cmd>SlimeSend0 "devtools::check()\\n"<cr>', "Check" },
+    b = { '<cmd>SlimeSend0 "devtools::build()\\n"<cr>', "Build" },
+    i = { '<cmd>SlimeSend0 "devtools::install()\\n"<cr>', "Install" },
+    d = { '<cmd>SlimeSend0 "devtools::document()\\n"<cr>', "Document" },
+    l = { '<cmd>SlimeSend0 "devtools::load_all()\\n"<cr>', "Load" }
   },
 
   s = {
