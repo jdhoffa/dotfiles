@@ -8,7 +8,7 @@ This is the home of all my dotfiles. These are files that add custom configurati
 
 # Software
 
-- Terminal: [Alacritty](https://alacritty.org)
+- Terminal: [WezTerm](https://wezfurlong.org/wezterm/)
 - Font: [SFMono Nerd Font](https://github.com/epk/SF-Mono-Nerd-Font)
 - Colors: [catppuccin](https://github.com/catppuccin/catppuccin)
 - Shell: [fish](https://fishshell.com)
