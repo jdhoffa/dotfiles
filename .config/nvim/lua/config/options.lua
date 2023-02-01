@@ -27,6 +27,10 @@ vim.opt.ignorecase = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 -- indent
 vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
