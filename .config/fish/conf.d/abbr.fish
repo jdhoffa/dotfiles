@@ -13,6 +13,7 @@ abbr bs "brew services"
 abbr bsr "brew services restart"
 abbr bu "brew update"
 abbr bug "brew upgrade"
+abbr brave "open -a Brave\ Browser"
 abbr c clear
 abbr cl clear
 abbr claer clear
@@ -57,6 +58,7 @@ abbr l "lsd  --group-dirs first -A"
 abbr ld lazydocker
 abbr lg lazygit
 abbr ll "lsd  --group-dirs first -Al"
+abbr ls "lsd  --group-dirs first -A"
 abbr lt "lsd  --group-dirs last -A --tree"
 abbr nb "npm run build"
 abbr nd "npm run dev"
@@ -70,6 +72,7 @@ abbr pd "pnpm dev"
 abbr pg "pnpm generate"
 abbr pi "pnpm install"
 abbr pw "pnpm web"
+abbr r "R --no-save"
 abbr rmr "rm -rf"
 abbr sa "SwitchAudioSource -t output -s (SwitchAudioSource -t output -a | fzf-tmux -p --reverse)"
 abbr sai "SwitchAudioSource -t input -s (SwitchAudioSource -t input -a | fzf-tmux -p --reverse)"

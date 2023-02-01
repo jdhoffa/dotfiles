@@ -17,6 +17,12 @@ return require("packer").startup({
       end,
     })
 
+    -- tabs
+    use({
+      "romgrk/barbar.nvim",
+      wants = { "nvim-tree/nvim-web-devicons" },
+    })
+
     -- theme
     use("catppuccin/nvim")
 
@@ -51,6 +57,13 @@ return require("packer").startup({
     use { 'numToStr/Comment.nvim', config = function() require('Comment').setup() end }
     use { 'windwp/nvim-autopairs', config = function() require('nvim-autopairs').setup {} end }
 
+    -- markdown
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = {'markdown'}
+    })
     -- undo
     use("mbbill/undotree")
 
@@ -138,6 +151,28 @@ return require("packer").startup({
       config = function() require 'octo'.setup {} end
     }
 
+    -- quarto 
+    use { 'quarto-dev/quarto-nvim',
+    requires = {
+      'jmbuhr/otter.nvim',
+      'neovim/nvim-lspconfig'
+    },
+    config = function()
+      require 'quarto'.setup {
+        lspFeatures = {
+          enabled = true,
+          languages = { 'r', 'python', 'julia' },
+          diagnostics = {
+            enabled = true,
+            triggers = { "BufWrite" }
+          },
+          completion = {
+            enabled = true
+          }
+        }
+      }
+    end
+  }
     -- slime
     use("jpalardy/vim-slime")
 

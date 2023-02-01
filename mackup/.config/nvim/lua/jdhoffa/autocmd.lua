@@ -1,5 +1,10 @@
 -- cSpell:words autocmd linebreak nolist afile yabairc skhdrc
 
+vim.api.nvim_create_autocmd({ "BufReadPost",  "FileReadPost" }, {
+  pattern = {"*"},
+  command = "set foldlevel=99",
+})
+
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { "*tmux.conf" },
   command = "execute 'silent !tmux source <afile> --silent'",
