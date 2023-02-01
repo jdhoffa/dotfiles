@@ -13,11 +13,14 @@ live_config_reload: true
 env:
   TERM: xterm-256color
 
+shell:
+  program: /opt/homebrew/bin/fish
+
 font:
   normal:
     family: "SFMono Nerd Font"
     style: Medium
-  size: 22.0
+  size: 16.0
 
 window:
   opacity: 0.8
@@ -42,6 +45,7 @@ key_bindings:
   - { key: Key8, mods: Command, chars: "\x028" } #                ... 8
   - { key: Key9, mods: Command, chars: "\x029" } #                ... 9
   - { key: Comma, mods: Command, chars: "\x02," } # rename the current tmux window
+  - { key: D, mods: Command, chars: "\x02K" } # open lazydocker
   - { key: E, mods: Command, chars: "\x02\"" } # split tmux window vertically
   - { key: E, mods: Command|Shift, chars: "\x02%" } # split tmux window horizontally
   - { key: F, mods: Command|Shift, chars: "\x02\x5b\x2f" } # start tmux search mode

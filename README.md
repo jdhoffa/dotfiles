@@ -1,4 +1,6 @@
-# Josh Medeski's Dotfiles
+# Jackson Hoffart's Dotfiles
+
+Forked from https://github.com/joshmedeski/dotfiles 
 
 ![screenshot](./screenshot.png)
 
@@ -16,6 +18,7 @@ Instructions coming soon.
 - Shell: [fish](https://fishshell.com)
 - Multiplexer: [tmux](https://github.com/tmux/tmux/wiki)
 - Editor: [Neovim](https://neovim.io)
+- Docker: [lazydocker](https://github.com/jesseduffield/lazydocker)
 - Git: [lazygit](https://github.com/jesseduffield/lazygit)
 - macOS package manager: [Homebrew](https://brew.sh)
 - npm package manager: [pnpm](https://pnpm.io/)
@@ -23,6 +26,6 @@ Instructions coming soon.
 
 # Hardware
 
-- Laptop: [MacBook Pro](https://www.apple.com/macbook-pro-14-and-16/) (16-inch, 2021, Apple M1 Pro Chip, 16GB RAM)
-- Keyboard: [Moonlander](https://www.zsa.io/moonlander/)
-- Mouse: Logitech trackball
+- Laptop: [MacBook Pro] (13-inch, 2020, Apple M1 Pro Chip, 16GB RAM)
+- Keyboard: [Razer Blackwidow Lite](https://www.razer.com/gaming-keyboards/razer-blackwidow-lite)
+- Mouse: [CMStorm Recon](https://www.coolermaster.com/us/en-us/catalog/legacy-products/peripheral/recon/)
