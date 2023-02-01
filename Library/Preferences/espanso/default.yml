@@ -9,14 +9,14 @@
 matches:
   # Signature
   - trigger: "sig;"
-    replace: "with gratitude,\nJosh Medeski"
+    replace: "Best,\nJackson Hoffart"
 
   # Emails
   - trigger: "em;"
-    replace: "josh.medeski@gmail.com"
+    replace: "jdhoffa@gmail.com"
     
   - trigger: "emw;"
-    replace: "josh@upgrademedia.com"
+    replace: "jhoffart@rmi.org"
 
   # Simple text replacement
   - trigger: ":espanso"
