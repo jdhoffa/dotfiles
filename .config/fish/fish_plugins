@@ -1,14 +1,6 @@
-<<<<<<< HEAD:mackup/.config/fish/fish_plugins
 fabioantunes/fish-nvm
-edc/bass
 franciscolourenco/done
-||||||| eab1f2c:mackup/.config/fish/fish_plugins
-jorgebucaran/fisher
 edc/bass
-franciscolourenco/done
-joshmedeski/fish-lf-icons
-=======
 jorgebucaran/fisher
 joshmedeski/fish-lf-icons
 meaningful-ooo/sponge
->>>>>>> fee1bbe27ca3175e206bb602880b0b8a9819205b:.config/fish/fish_plugins
