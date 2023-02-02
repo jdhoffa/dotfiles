@@ -26,3 +26,21 @@ vim.keymap.set("n", "<leader>bk", "<cmd>bp<cr>", { desc = "Previous" })
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Next" })
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Previous" })
 vim.keymap.set("n", "<leader>bsd", "<cmd>%bd|e#|bd#<cr>|'<cr>", { desc = "Delete surrounding" })
+
+-- slime
+vim.g.slime_dont_ask_default = 1
+vim.g.slime_target = "tmux"
+vim.g.slime_tmux_config = {
+  socket_name = "default",
+  target_pane = "{last}",
+}
+vim.g.slime_paste_file = "/tmp/vim-slime-paste"
+vim.keymap.set("n", "<c-c><cr>", "<c-c><c-c>}j", { desc = "Slime and jump chunk" })
+
+-- slime (R)
+vim.keymap.set("n", "<leader>rt", "<cmd>SlimeSend0 'devtools::test()\\n'<cr>", { desc = "Test all" })
+vim.keymap.set("n", "<leader>rc", "<cmd>SlimeSend0 'devtools::check()\\n'<cr>", { desc = "Check" })
+vim.keymap.set("n", "<leader>rb", "<cmd>SlimeSend0 'devtools::build()\\n'<cr>", { desc = "Build" })
+vim.keymap.set("n", "<leader>ri", "<cmd>SlimeSend0 'devtools::install()\\n'<cr>", { desc = "Install" })
+vim.keymap.set("n", "<leader>rd", "<cmd>SlimeSend0 'devtools::document()\\n'<cr>", { desc = "Document" })
+vim.keymap.set("n", "<leader>rl", "<cmd>SlimeSend0 'devtools::load_all()\\n'<cr>", { desc = "Load all" })
