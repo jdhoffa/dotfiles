@@ -6,6 +6,10 @@ Forked from https://github.com/joshmedeski/dotfiles
 
 This is the home of all my dotfiles. These are files that add custom configurations to my computer and applications, primarily the terminal.
 
+# How to install
+
+Instructions coming soon.
+
 # Software
 
 - Terminal: [WezTerm](https://wezfurlong.org/wezterm/)
