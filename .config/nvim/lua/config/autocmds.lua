@@ -13,6 +13,11 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 })
 
 vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = { "config.fish" },
+  command = "execute 'silent !source <afile> --silent'",
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { ".yabairc" },
   command = "!brew services restart yabai",
 })
@@ -20,6 +25,13 @@ vim.api.nvim_create_autocmd("BufWritePost", {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = { ".skhdrc" },
   command = "!brew services restart skhd",
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
+  pattern = { "bubu" },
+  callback = function()
+    vim.cmd([[set filetype=javascript]])
+  end,
 })
 
 vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {

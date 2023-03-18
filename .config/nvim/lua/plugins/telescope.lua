@@ -33,6 +33,10 @@ return {
         prompt_prefix = " ",
         show_untracked = true,
       },
+      find_files = {
+        prompt_prefix = " ",
+        find_command = { "rg", "--files", "--hidden" },
+      },
     },
   },
   keys = function()

@@ -1,6 +1,4 @@
 {
-  "language": "en",
-  "version": "0.2",
   "flagWords": [],
   "words": [
     "ajeetdsouza",
@@ -101,6 +99,14 @@
     "winwidth",
     "Xcode",
     "yabai",
-    "zoxide"
-  ]
+    "zoxide",
+    "folke",
+    "lazyvim",
+    "navic",
+    "globalstatus",
+    "statusline",
+    "nargs"
+  ],
+  "language": "en",
+  "version": "0.2"
 }
