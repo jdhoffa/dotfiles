@@ -12,6 +12,7 @@
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
 pyenv init - | source
+thefuck --alias | source
 
 set -U LANG en_US.UTF-8 # language
 set -U LC_ALL en_US.UTF-8
