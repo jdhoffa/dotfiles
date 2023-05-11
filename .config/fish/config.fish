@@ -20,7 +20,9 @@ set -U LC_ALL en_US.UTF-8
 set -gx CPPFLAGS -I/opt/homebrew/opt/sqlite/include
 set -gx LDFLAGS -L/opt/homebrew/opt/sqlite/lib
 set -gx PKG_CONFIG_PATH /opt/homebrew/opt/sqlite/lib/pkgconfig
+set -gx NPM_GLOBAL /Users/jdhoffa/.npm-global/
 set -gx PNPM_HOME /Users/jdhoffa/Library/pnpm # https://pnpm.io/
+set -gx RUST_CARGO /Users/jdhoffa/.cargo
 set -gx R_ENVIRON_USER ~/.Renviron # https://www.r-project.org/
 set -gx R_PROFILE_USER ~/.Rprofile # https://www.r-project.org/
 set -Ux BAT_THEME Nord # 'sharkdp/bat' cat clone 
@@ -44,7 +46,9 @@ fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/opt/sqlite/bin
 fish_add_path /opt/homebrew/opt/openjdk/bi
 fish_add_path $GOPATH/bin
+fish_add_path $NPM_GLOBAL/bin
 fish_add_path $PNPM_HOME
+fish_add_path $RUST_CARGO/bin
 fish_add_path $HOME/local/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.config/tmux/plugins/tmux-nvr/bin
