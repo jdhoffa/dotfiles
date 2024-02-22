@@ -26,6 +26,7 @@ set -gx RUST_CARGO /Users/jdhoffa/.cargo
 set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 set -gx R_ENVIRON_USER ~/.Renviron # https://www.r-project.org/
 set -gx R_PROFILE_USER ~/.Rprofile # https://www.r-project.org/
+set -gx MODULAR_HOME ~/.modular
 set -Ux BAT_THEME Nord # 'sharkdp/bat' cat clone 
 set -Ux EDITOR nvim # 'neovim/neovim' text editor 
 set -Ux fish_greeting # disable fish greeting
@@ -53,4 +54,5 @@ fish_add_path $HOME/local/bin
 fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.config/tmux/plugins/tmux-nvr/bin
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
-fish_add_path $HOME/.config/bin # my custom scripts
+fish_add_path $HOME/.config/bin
+fish_add_path $HOME/.modular/pkg/packages.modular.com_mojo/bin# my custom scripts
