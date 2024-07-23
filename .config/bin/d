@@ -20,10 +20,4 @@ if [ -f yarn.lock ]; then
     exit 0
 fi
 
-if [ -f pnpm-lock.yaml ]; then
-    echo 'pnpm run dev'
-    pnpm run dev
-    exit 0
-fi
-
 echo ' Node package not detected'

@@ -1,6 +1,6 @@
 # Jackson Hoffart's Dotfiles
 
-Forked from https://github.com/joshmedeski/dotfiles 
+Forked from https://github.com/joshmedeski/dotfiles
 
 ![screenshot](./screenshot.png)
 
@@ -21,7 +21,7 @@ Instructions coming soon.
 - Docker: [lazydocker](https://github.com/jesseduffield/lazydocker)
 - Git: [lazygit](https://github.com/jesseduffield/lazygit)
 - macOS package manager: [Homebrew](https://brew.sh)
-- npm package manager: [pnpm](https://pnpm.io/)
+- npm package manager: [npm](https://www.npmjs.com/)
 - music accessory: [Sleeve](https://replay.software/sleeve)
 
 # Hardware
