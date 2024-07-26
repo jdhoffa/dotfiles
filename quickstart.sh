@@ -10,7 +10,6 @@ brew install fish
 brew install fzf
 brew install gh
 brew install git
-brew install git-delta
 brew install lazydocker
 brew install lazygit
 brew install lf
@@ -64,13 +63,13 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 if [[ $PLATFORM == 'macos' ]]; then
    brew install --cask 1password
    brew install --cask alacritty
-   brew install --cask alfred           
-   brew install --cask discord          
-   brew install --cask fantastical      
-   brew install --cask home-assistant   
-   brew install --cask obsidian         
-   brew install --cask postman          
+   brew install --cask alfred
+   brew install --cask discord
+   brew install --cask fantastical
+   brew install --cask home-assistant
+   brew install --cask obsidian
+   brew install --cask postman
    brew install --cask slack
-   brew install --cask spacelauncher    
+   brew install --cask spacelauncher
    brew install --cask spotify
    brew install --cask vivaldi

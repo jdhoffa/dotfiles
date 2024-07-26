@@ -6,16 +6,12 @@
 [core]
  	editor = vim
  	excludesfile = /Users/jdhoffa/.gitignore
-	pager = delta
-[interactive]
-	diffFilter = delta --color-only
+    pager = bat --paging=always --pager=less
+
 [color]
 	ui = true
 [diff]
 	colorMoved = default
-[delta]
-	navigate = true
-	line-numbers = true
 [merge]
 	conflictstyle = diff3
 	tool = vimdiff
