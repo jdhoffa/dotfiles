@@ -27,8 +27,5 @@ vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Next" })
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>", { desc = "Previous" })
 vim.keymap.set("n", "<leader>bsd", "<cmd>%bd|e#|bd#<cr>|'<cr>", { desc = "Delete surrounding" })
 
--- slime
-vim.keymap.set("n", "<c-c><cr>", "<c-c><c-c>}j", { remap = true, desc = "Slime and jump chunk" })
-
 -- shortcutsi
 vim.keymap.set("i", "<c-c>o", "%>%<cr>", { remap = true, desc = "Pipe operator" })
