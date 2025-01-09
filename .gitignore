@@ -58,3 +58,4 @@ Library/Preferences/us.zoom.xos.plist
 zed/.tmp*
 zed/prompts
 zed/conversations
+zed/embeddings
