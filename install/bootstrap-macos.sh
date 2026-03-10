@@ -39,9 +39,20 @@ mkdir -p "$HOME/Documents/github"
 echo "Updating Homebrew..."
 brew update
 
-readarray -t BREW_TAPS < <(awk -F'"' '/^[[:space:]]*tap[[:space:]]+"/ { print $2 }' "$BREWFILE")
-readarray -t BREW_FORMULAE < <(awk -F'"' '/^[[:space:]]*brew[[:space:]]+"/ { print $2 }' "$BREWFILE")
-readarray -t BREW_CASKS < <(awk -F'"' '/^[[:space:]]*cask[[:space:]]+"/ { print $2 }' "$BREWFILE")
+BREW_TAPS=()
+while IFS= read -r entry; do
+  BREW_TAPS+=("$entry")
+done < <(awk -F'"' '/^[[:space:]]*tap[[:space:]]+"/ { print $2 }' "$BREWFILE")
+
+BREW_FORMULAE=()
+while IFS= read -r entry; do
+  BREW_FORMULAE+=("$entry")
+done < <(awk -F'"' '/^[[:space:]]*brew[[:space:]]+"/ { print $2 }' "$BREWFILE")
+
+BREW_CASKS=()
+while IFS= read -r entry; do
+  BREW_CASKS+=("$entry")
+done < <(awk -F'"' '/^[[:space:]]*cask[[:space:]]+"/ { print $2 }' "$BREWFILE")
 
 install_brew_entries() {
   local label="$1"
