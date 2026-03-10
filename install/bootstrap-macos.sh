@@ -39,8 +39,47 @@ mkdir -p "$HOME/Documents/github"
 echo "Updating Homebrew..."
 brew update
 
-echo "Installing dependencies from Brewfile..."
-brew bundle --file "$BREWFILE"
+readarray -t BREW_TAPS < <(awk -F'"' '/^[[:space:]]*tap[[:space:]]+"/ { print $2 }' "$BREWFILE")
+readarray -t BREW_FORMULAE < <(awk -F'"' '/^[[:space:]]*brew[[:space:]]+"/ { print $2 }' "$BREWFILE")
+readarray -t BREW_CASKS < <(awk -F'"' '/^[[:space:]]*cask[[:space:]]+"/ { print $2 }' "$BREWFILE")
+
+install_brew_entries() {
+  local label="$1"
+  local install_type="$2"
+  shift 2
+  local entries=("$@")
+  local total="${#entries[@]}"
+
+  if (( total == 0 )); then
+    return
+  fi
+
+  echo "Installing $label ($total)..."
+  local index=0
+  for entry in "${entries[@]}"; do
+    ((index += 1))
+    echo "  [$index/$total] $install_type: $entry"
+    case "$install_type" in
+      tap)
+        brew tap "$entry"
+        ;;
+      formula)
+        brew install "$entry"
+        ;;
+      cask)
+        brew install --cask "$entry"
+        ;;
+      *)
+        echo "Unknown install type: $install_type" >&2
+        exit 1
+        ;;
+    esac
+  done
+}
+
+install_brew_entries "Homebrew taps" "tap" "${BREW_TAPS[@]}"
+install_brew_entries "Homebrew formulae" "formula" "${BREW_FORMULAE[@]}"
+install_brew_entries "Homebrew casks" "cask" "${BREW_CASKS[@]}"
 
 echo "Done. Next steps:"
 echo "  1) Run: ./install/stow.sh"
