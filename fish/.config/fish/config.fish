@@ -11,7 +11,6 @@
 
 starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
-pyenv init - | source
 thefuck --alias | source
 
 set -U LANG en_US.UTF-8 # language
@@ -23,15 +22,12 @@ set -gx PKG_CONFIG_PATH /opt/homebrew/opt/sqlite/lib/pkgconfig
 set -gx NPM_GLOBAL /Users/jdhoffa/.npm-global/
 set -gx BUN_INSTALL /Users/jdhoffa/.bun
 set -gx RUST_CARGO /Users/jdhoffa/.cargo
-set -gx R_ENVIRON_USER ~/.Renviron # https://www.r-project.org/
-set -gx R_PROFILE_USER ~/.Rprofile # https://www.r-project.org/
 set -gx MODULAR_HOME ~/.modular
 set -Ux BAT_THEME Nord # 'sharkdp/bat' cat clone
 set -Ux EDITOR nvim # 'neovim/neovim' text editor
 set -Ux fish_greeting # disable fish greeting
 
 set -U FZF_DEFAULT_COMMAND "fd -H -E '.git'"
-set -Ux GOPATH (go env GOPATH) # https://golang.google.cn/
 set -Ux KIT_EDITOR /opt/homebrew/bin/nvim # https://www.scriptkit.com/
 set -Ux LANG en_US.UTF-8
 set -Ux LC_ALL en_US.UTF-8
@@ -46,7 +42,6 @@ fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/opt/sqlite/bin
 fish_add_path /opt/homebrew/opt/libpq/bin
 fish_add_path /opt/homebrew/opt/openjdk/bin
-fish_add_path $GOPATH/bin
 fish_add_path $NPM_GLOBAL/bin
 fish_add_path $NVM_DIR/versions/node/v24.9.0/bin
 fish_add_path $HOME/local/bin
@@ -54,5 +49,4 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.tmux/plugins/tmux-nvr/bin
 fish_add_path $HOME/.tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin
-fish_add_path $HOME/.modular/pkg/packages.modular.com_mojo/bin
 fish_add_path $BUN_INSTALL/bin
