@@ -13,7 +13,7 @@ starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
 thefuck --alias | source
 
-if test "$TERM" = "wezterm"
+if test "$TERM" = wezterm
     if not infocmp wezterm >/dev/null 2>&1
         set -gx TERM xterm-256color
     end
@@ -52,7 +52,7 @@ fish_add_path $NPM_GLOBAL/bin
 fish_add_path $NVM_DIR/versions/node/v24.9.0/bin
 fish_add_path $HOME/local/bin
 fish_add_path $HOME/.local/bin
-fish_add_path $HOME/.tmux/plugins/tmux-nvr/bin
-fish_add_path $HOME/.tmux/plugins/t-smart-tmux-session-manager/bin
+fish_add_path $HOME/.config/tmux/plugins/tmux-nvr/bin
+fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin
 fish_add_path $BUN_INSTALL/bin
