@@ -78,6 +78,7 @@ abbr sao "SwitchAudioSource -t output -s (SwitchAudioSource -t output -a | fzf-t
 abbr sb "sam build"
 abbr sf "source ~/.config/fish/config.fish"
 abbr st "tmux source ~/.config/tmux/tmux.conf"
+abbr T t
 abbr ta "tmux a"
 abbr tat "tmux attach -t"
 abbr td "t dotfiles"
