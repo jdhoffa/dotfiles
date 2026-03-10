@@ -21,16 +21,14 @@ set -gx CPPFLAGS -I/opt/homebrew/opt/sqlite/include
 set -gx LDFLAGS -L/opt/homebrew/opt/sqlite/lib
 set -gx PKG_CONFIG_PATH /opt/homebrew/opt/sqlite/lib/pkgconfig
 set -gx NPM_GLOBAL /Users/jdhoffa/.npm-global/
+set -gx BUN_INSTALL /Users/jdhoffa/.bun
 set -gx RUST_CARGO /Users/jdhoffa/.cargo
-set -gx DOCKER_DEFAULT_PLATFORM linux/amd64
 set -gx R_ENVIRON_USER ~/.Renviron # https://www.r-project.org/
 set -gx R_PROFILE_USER ~/.Rprofile # https://www.r-project.org/
 set -gx MODULAR_HOME ~/.modular
 set -Ux BAT_THEME Nord # 'sharkdp/bat' cat clone
 set -Ux EDITOR nvim # 'neovim/neovim' text editor
 set -Ux fish_greeting # disable fish greeting
-
-set -gx RIPGREP_CONFIG_PATH "$HOME/.config/rg/ripgreprc"
 
 set -U FZF_DEFAULT_COMMAND "fd -H -E '.git'"
 set -Ux GOPATH (go env GOPATH) # https://golang.google.cn/
@@ -46,6 +44,7 @@ set -Ux VISUAL nvim
 fish_add_path /opt/homebrew/bin # https://brew.sh/
 fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/opt/sqlite/bin
+fish_add_path /opt/homebrew/opt/libpq/bin_add_path
 fish_add_path /opt/homebrew/opt/openjdk/bi
 fish_add_path $GOPATH/bin
 fish_add_path $NPM_GLOBAL/bin
@@ -55,4 +54,5 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.config/tmux/plugins/tmux-nvr/bin
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin
-fish_add_path $HOME/.modular/pkg/packages.modular.com_mojo/bin
+fish_add_path $HOME/.modular/pkg/packages.modular.com_mojo/bino
+fish_add_path $BUN_INSTALL/bin

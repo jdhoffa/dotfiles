@@ -8,7 +8,7 @@ This is the home of all my dotfiles. These are files that add custom configurati
 
 # How to install
 
-Instructions coming soon.
+Follow the step-by-step guide: [docs/new-mac-setup.md](./docs/new-mac-setup.md)
 
 # Software
 
@@ -29,3 +29,13 @@ Instructions coming soon.
 - Laptop: [MacBook Pro] (13-inch, 2020, Apple M1 Pro Chip, 16GB RAM)
 - Keyboard: [Razer Blackwidow Lite](https://www.razer.com/gaming-keyboards/razer-blackwidow-lite)
 - Mouse: [CMStorm Recon](https://www.coolermaster.com/us/en-us/catalog/legacy-products/peripheral/recon/)
+
+## Neovim recovery (LazyVim)
+
+If Neovim starts showing Tree-sitter query errors after migrations (for example from vim-plug/packer to LazyVim), run:
+
+```bash
+~/github/dotfiles/install/restore_nvim_lazyvim.sh
+```
+
+This script backs up your old Neovim state and rebuilds a clean LazyVim install using this repo's `.config/nvim` and `lazy-lock.json`.

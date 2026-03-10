@@ -68,7 +68,7 @@ brew "node"
 brew "openssl@3"
 brew "nushell"
 brew "pandoc"
-brew "pgcli"/
+brew "pgcli"
 brew "procs"
 brew "pyenv"
 brew "pyenv-virtualenv"

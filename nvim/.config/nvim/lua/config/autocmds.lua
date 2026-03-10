@@ -28,10 +28,3 @@ vim.api.nvim_create_autocmd({ "BufNewFile", "BufFilePre", "BufRead" }, {
     vim.cmd([[set filetype=markdown wrap linebreak nolist]])
   end,
 })
-
-vim.api.nvim_create_autocmd({ "BufRead" }, {
-  pattern = { "*.conf" },
-  callback = function()
-    vim.cmd([[set filetype=sh]])
-  end,
-})
