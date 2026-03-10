@@ -29,8 +29,6 @@ abbr dcr "docker compose restart"
 abbr dcu "docker compose up -d"
 abbr dps "docker ps --format 'table {{.Names}}\t{{.Status}}'"
 abbr e exit
-abbr ee "espanso edit"
-abbr er "espanso restart"
 abbr g "git status"
 abbr ga "git add ."
 abbr gb "git branch -v"
