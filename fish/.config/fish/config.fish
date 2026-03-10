@@ -44,8 +44,8 @@ set -Ux VISUAL nvim
 fish_add_path /opt/homebrew/bin # https://brew.sh/
 fish_add_path /opt/homebrew/sbin
 fish_add_path /opt/homebrew/opt/sqlite/bin
-fish_add_path /opt/homebrew/opt/libpq/bin_add_path
-fish_add_path /opt/homebrew/opt/openjdk/bi
+fish_add_path /opt/homebrew/opt/libpq/bin
+fish_add_path /opt/homebrew/opt/openjdk/bin
 fish_add_path $GOPATH/bin
 fish_add_path $NPM_GLOBAL/bin
 fish_add_path $NVM_DIR/versions/node/v24.9.0/bin
@@ -54,5 +54,5 @@ fish_add_path $HOME/.local/bin
 fish_add_path $HOME/.tmux/plugins/tmux-nvr/bin
 fish_add_path $HOME/.tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin
-fish_add_path $HOME/.modular/pkg/packages.modular.com_mojo/bino
+fish_add_path $HOME/.modular/pkg/packages.modular.com_mojo/bin
 fish_add_path $BUN_INSTALL/bin
