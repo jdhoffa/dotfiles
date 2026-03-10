@@ -1,8 +1,6 @@
 [user]
 	name = Jackson Hoffart
 	email = jackson.hoffart@gmail.com
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [core]
  	editor = vim
  	excludesfile = /Users/jdhoffa/.gitignore
