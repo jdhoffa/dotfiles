@@ -43,5 +43,5 @@ echo "Installing dependencies from Brewfile..."
 brew bundle --file "$BREWFILE"
 
 echo "Done. Next steps:"
-echo "  1) Run ./install/link.sh"
-echo "  2) Open WezTerm and verify tools (brew, git, nvim)"
+echo "  1) Run: ./install/stow.sh"
+echo "  2) Open WezTerm and verify tools (brew, stow, git, nvim)"

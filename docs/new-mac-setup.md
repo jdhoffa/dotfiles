@@ -59,16 +59,17 @@ cd dotfiles
 
 This installs all Homebrew formulae/casks in [`Brewfile`](../Brewfile) using `brew bundle`.
 
-## 8) Link dotfiles into your home directory
+## 8) Link dotfiles into your home directory (GNU Stow)
 
 ```bash
-./install/link.sh
+./install/stow.sh
 ```
 
 ## 9) Verify key tools
 
 ```bash
 brew --version
+stow --version
 git --version
 wezterm --version
 nvim --version
@@ -77,4 +78,5 @@ nvim --version
 ## Notes
 
 - If `brew bundle` fails due to a cask/formula you do not want on this machine, comment it out in `Brewfile` and rerun.
+- If `stow` reports conflicts, inspect the file paths it lists and move/remove existing files before rerunning `./install/stow.sh`.
 - Keep this file updated whenever you add/remove dependencies so setup stays reproducible.
