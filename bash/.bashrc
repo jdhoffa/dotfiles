@@ -1,5 +1,9 @@
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+if [ "${TERM:-}" = "wezterm" ] && ! infocmp wezterm >/dev/null 2>&1; then
+  export TERM=xterm-256color
+fi
+
 export FZF_DEFAULT_OPTS="\
 --reverse --no-info --prompt=' ' --pointer='' --marker=' ' \
 --color=bg+:,bg:,spinner:#f5e0dc,hl:#f38ba8 \

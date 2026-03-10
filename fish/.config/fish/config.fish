@@ -13,6 +13,12 @@ starship init fish | source # https://starship.rs/
 zoxide init fish | source # 'ajeetdsouza/zoxide'
 thefuck --alias | source
 
+if test "$TERM" = "wezterm"
+    if not infocmp wezterm >/dev/null 2>&1
+        set -gx TERM xterm-256color
+    end
+end
+
 set -U LANG en_US.UTF-8 # language
 set -U LC_ALL en_US.UTF-8
 
