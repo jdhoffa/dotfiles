@@ -25,9 +25,9 @@ set -U LC_ALL en_US.UTF-8
 set -gx CPPFLAGS -I/opt/homebrew/opt/sqlite/include
 set -gx LDFLAGS -L/opt/homebrew/opt/sqlite/lib
 set -gx PKG_CONFIG_PATH /opt/homebrew/opt/sqlite/lib/pkgconfig
-set -gx NPM_GLOBAL /Users/jdhoffa/.npm-global/
-set -gx BUN_INSTALL /Users/jdhoffa/.bun
-set -gx RUST_CARGO /Users/jdhoffa/.cargo
+set -gx NPM_GLOBAL $HOME/.npm-global/
+set -gx BUN_INSTALL $HOME/.bun
+set -gx CARGO_HOME $HOME/.cargo
 set -gx MODULAR_HOME ~/.modular
 set -Ux BAT_THEME Nord # 'sharkdp/bat' cat clone
 set -Ux EDITOR nvim # 'neovim/neovim' text editor
@@ -56,3 +56,8 @@ fish_add_path $HOME/.config/tmux/plugins/tmux-nvr/bin
 fish_add_path $HOME/.config/tmux/plugins/t-smart-tmux-session-manager/bin
 fish_add_path $HOME/.config/bin
 fish_add_path $BUN_INSTALL/bin
+if test -d $CARGO_HOME/bin
+    fish_add_path $CARGO_HOME/bin
+else if test -d $HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin
+    fish_add_path $HOME/.rustup/toolchains/stable-aarch64-apple-darwin/bin
+end
